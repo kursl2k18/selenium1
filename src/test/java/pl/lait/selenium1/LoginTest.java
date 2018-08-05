@@ -7,10 +7,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.*;
 
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest {
 	
 	WebDriver driver = null;
+	
 
 	@Before
 	public void openPage() {
@@ -20,8 +22,10 @@ public class LoginTest {
 	@Ignore
 	@Test
 	public void clickOnMenuItems() {
+		
 		Init.sleep(2);
         driver.findElement(By.linkText("SIGN-ON")).click();
+        Init.log("SIGN-ON click");
         Init.sleep(1);
         driver.findElement(By.linkText("REGISTER")).click();
         Init.sleep(1);
@@ -38,6 +42,7 @@ public class LoginTest {
         Init.sleep(1);
         driver.findElement(By.linkText("SIGN-OFF")).click();
         Init.sleep(1);
+        Init.setTestStatus(true, "ok");
 	}
 	
 	@Test
