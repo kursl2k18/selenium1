@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.*;
 
+@Ignore
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest {
 	
@@ -40,6 +41,7 @@ public class LoginTest {
         Init.sleep(1);
 	}
 	
+	@Ignore
 	@Test
 	public void reservation() {
 		driver.findElement(By.linkText("SIGN-ON")).click();

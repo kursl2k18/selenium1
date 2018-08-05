@@ -14,17 +14,20 @@ public class Init {
 		System.setProperty("webdriver.gecko.driver", "/Users/adam/Documents/LAIT/geckodriver");
         
         DesiredCapabilities cap = DesiredCapabilities.firefox();
-        
-        driver = new FirefoxDriver(cap);
-        driver.get("http://newtours.demoaut.com");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        return driver;
+        if (driver == null) {
+        		driver = new FirefoxDriver(cap);
+            driver.get("http://newtours.demoaut.com");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().window().maximize();
+            return driver;
+        } else {
+        		return driver;
+        }
 	}
-	
 	
 	public static void endTest() {
 		driver.quit();
+		driver = null;
 	}
 	
 	public static void sleep(int seconds) {

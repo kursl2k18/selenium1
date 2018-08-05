@@ -28,10 +28,17 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	/**
+	 * Open login page = click on SIGN-ON link
+	 */
 	public void goToLoginPage() {
 		signOnLink.click();
 	}
-	
+	/**
+	 * Login user with provided data
+	 * @param login
+	 * @param password
+	 */
 	public void loginAs(String login, String password) {
 		loginInput.sendKeys(login);
 		passwordInput.sendKeys(password);
