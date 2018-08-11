@@ -24,13 +24,13 @@ public class Login2Test {
 		loginPage.goToLoginPage();
 		
 		loginPage.loginAs("adamdz", "qwe123");
-		
+		System.out.println(driver.getTitle());
 		ReservationPage reservPage = new ReservationPage();
 		reservPage.fillTheReservationForm();
-		
+		System.out.println(driver.getTitle());
 		Reservation2Page reserv2Page = new Reservation2Page();
 		reserv2Page.chooseFlights();
-		
+		System.out.println(driver.getTitle());
 	}
 	
 	@After
