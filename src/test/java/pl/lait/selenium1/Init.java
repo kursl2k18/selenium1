@@ -17,7 +17,7 @@ public class Init {
 		System.setProperty("webdriver.gecko.driver", "/Users/adam/Documents/LAIT/geckodriver");
         URL url = null;
 		try {
-			url = new URL("http://192.168.2.60:4444/wd/hub");
+			url = new URL("http://192.168.0.104:4444/wd/hub");
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
