@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,7 +20,6 @@ public class Init {
 		try {
 			url = new URL("http://192.168.0.104:4444/wd/hub");
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         DesiredCapabilities cap = DesiredCapabilities.chrome();
@@ -29,6 +29,7 @@ public class Init {
             driver.get("http://newtours.demoaut.com");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             //driver.manage().window().maximize();
+            
             return driver;
         } else {
         		return driver;

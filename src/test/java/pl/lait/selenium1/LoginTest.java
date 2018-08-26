@@ -2,6 +2,9 @@ package pl.lait.selenium1;
 
 import org.junit.Before;
 import org.junit.runners.MethodSorters;
+
+import static org.junit.Assert.assertTrue;
+
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -39,6 +42,10 @@ public class LoginTest {
         Init.sleep(1);
         driver.findElement(By.linkText("SIGN-OFF")).click();
         Init.sleep(1);
+        System.out.println("Poszukiwany tytuł okna to:"
+        		 + driver.getTitle());
+		assertTrue("Tytuł okna jest nieprawidłowy", driver.getTitle().equals("Sign-on: Mercury Tours"));
+		
 	}
 	
 	@Ignore
@@ -58,7 +65,6 @@ public class LoginTest {
 		
 		Select fromPort = new Select(driver.findElement(By.name("fromPort")));
 		fromPort.selectByValue("Frankfurt");
-		
 		
 		
 	}
